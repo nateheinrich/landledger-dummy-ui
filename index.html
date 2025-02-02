@@ -5,16 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandLedger Dummy UI</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { max-width: 600px; margin: auto; padding: 20px; }
-        button { padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; }
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        button { padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; background-color: #007bff; color: white; }
+        button:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the LandLedger Dummy UI</h1>
-        <button onclick="alert('Tokenizing Land...')">Tokenize Land</button>
-        <button onclick="alert('Viewing My Land Tokens...')">View My Land Tokens</button>
+        <button onclick="tokenizeLand()">Tokenize Land</button>
+        <button onclick="viewTokens()">View My Land Tokens</button>
+        <div id="output" style="margin-top: 20px;"></div>
     </div>
+
+    <script>
+        function tokenizeLand() {
+            document.getElementById("output").innerHTML = "<p>Simulating land tokenization...</p>";
+            setTimeout(() => {
+                document.getElementById("output").innerHTML = "<p>Land tokenized successfully!</p>";
+            }, 2000);
+        }
+
+        function viewTokens() {
+            document.getElementById("output").innerHTML = "<p>Fetching your land tokens...</p>";
+            setTimeout(() => {
+                document.getElementById("output").innerHTML = "<p>You own 5 tokenized acres of farmland.</p>";
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
